@@ -14,9 +14,8 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 CHROMA_API_IMPL = os.getenv('CHROMA_API_IMPL')
 CHROMA_SERVER_HOST = os.getenv('CHROMA_SERVER_HOST')
 CHROMA_SERVER_HTTP_PORT = int(os.getenv('CHROMA_SERVER_HTTP_PORT'))
-
-PORT = 3000
-DEVELOPMENT = True
+PORT = int(os.getenv('PORT'))
+DEVELOPMENT = os.getenv('DEVELOPMENT') == 'true'
 
 app = Flask(__name__)
 CORS(app)
